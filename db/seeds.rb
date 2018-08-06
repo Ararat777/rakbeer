@@ -17,3 +17,6 @@ OrderStatus.create!(id: 3,:title => "В Доставке")
 OrderStatus.create!(id: 4,:title => "Завершен")
 OrderStatus.create!(id: 5,:title => "Не доставлен")
 OrderStatus.create!(id: 6,:title => "Отказ")
+
+Admin.delete_all
+Admin.create!(:email => "admin@admin.com", :password => "123456")

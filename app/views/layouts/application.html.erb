@@ -13,10 +13,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2">
+          <% if admin_signed_in? %>
           <h4>Сегодня</h4>
           <p>Всего заказов: <%= CompletedOrder.today.size %></p>
           <p>Сумма заказов: <%= CompletedOrder.today.joins(:order).sum(:total_amount) %></p>
           <%= link_to "Новый заказ", new_order_path, class: "btn btn-success" %>
+          <% end %>
         </div>
         <div class="col-md-8">
           <%= yield %>
