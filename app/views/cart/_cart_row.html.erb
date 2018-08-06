@@ -1,0 +1,6 @@
+<tr>
+  <td><%= item.product.title %></td>
+  <td><%= item.quantity %></td>
+  <td><%= item.subtotal_amount  %></td>
+  <td><%= link_to "Удалить",order_item_path(item.id),class: "btn btn-danger btn-sm",method: :delete,remote: true %></td>
+</tr>

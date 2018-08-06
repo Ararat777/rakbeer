@@ -1,0 +1,30 @@
+<% if completed_order.errors.any? %>
+  <% completed_order.errors.each do |k,v| %>
+    <div class="alert alert-danger" role="alert">
+      <%= v %>
+    </div>
+  <% end %>
+<% end %>
+<%= form_for completed_order do |f| %>
+  <div class="form-group">
+    <%= f.label "ФИО клиента" %>
+    <%= f.text_field :client_name,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Номер" %>
+    <%= f.text_field :client_phone,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Адрес доставки" %>
+    <%= f.text_field :adress_delivery,class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Метод оплаты" %>
+    <%= f.select :payment_method_id,PaymentMethod.all.collect{|pm| [pm.title, pm.id]},class: "custom-select" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Статус заказа" %>
+    <%= f.select :order_status_id,OrderStatus.all.collect{|os| [os.title, os.id]},class: "form-control" %>
+  </div>
+  <%= f.submit "Сохранить",class: "btn btn-primary" %>
+<% end %>

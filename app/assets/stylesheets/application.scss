@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+@import "bootstrap";
+
+body{
+  padding-bottom: 30px;
+}
+
+.cart-box{
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#modal-window{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+  #modal-box{
+    padding: 10px;
+    position: relative;
+    width: 60%;
+    background: white;
+    margin: 100px auto auto;
+    .close{
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+  }
+}
+
+.status_4{
+  background: rgba(0,128,0,0.5);
+}
+.status_5,.status_6{
+  background: rgba(255,0,0,0.5);
+}

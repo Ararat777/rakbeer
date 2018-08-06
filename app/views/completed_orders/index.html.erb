@@ -1,0 +1,12 @@
+<%= form_for :q,url: completed_orders_path,method: :get,enforce_utf8: false,html:{class: "filter-form form-inline mb-5"} do |f| %>
+  <div class="input-group mr-3">
+    <%= f.label "Начало" %>
+    <%= f.date_field :start_date_filter, class: "form-control ml-2" %>
+  </div>
+  <div class="input-group">
+      <%= f.label "Конец" %>
+      <%= f.date_field :end_date_filter, class: "form-control ml-2" %>
+    </div>
+  <%= f.submit "Фильтр",class: "btn btn-primary ml-3" %>
+<% end %>
+<%= render "completed_orders",orders: @orders %>

@@ -1,0 +1,25 @@
+<h4 class="text-center">Оформление заказа</h4>
+<div class="cart-box">
+  <%= render "cart/cart_box" %>
+</div>
+<div class="row">
+  <% @products.each do |item| %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.title %></h5>
+          <h6 class="card-subtitle mb-2"><%= item.price %> грн</h6>
+          <%= form_for @order_item,remote: true do |f| %>
+            <div class="input-group">
+              <%= f.number_field :quantity,min: 1,value: 1,class: "form-control mr-2" %>
+              <div class="input-group-btn">
+                <%= f.hidden_field :product_id, value: item.id %>
+                <%= f.submit "Добавить",class: "btn btn-success" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

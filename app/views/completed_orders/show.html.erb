@@ -1,0 +1,47 @@
+<h4 class="text-center">Заказ номер <%= @completed_order.id %></h4>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Номер</th>
+      <td><%= @completed_order.id %></td>
+    </tr>
+    <tr>
+      <th>Дата и время</th>
+      <td><%= @completed_order.created_at.strftime("%F %T") %></td>
+    </tr>
+    <tr>
+      <th>Статус</th>
+      <td><%= @completed_order.order_status.title %></td>
+    </tr>
+    <tr>
+      <th>ФИО клиента</th>
+      <td><%= @completed_order.client_name %></td>
+    </tr>
+    <tr>
+      <th>Номер клиента</th>
+      <td><%= link_to @completed_order.client_phone,client_orders_client_path(@completed_order.client),remote: true %></td>
+    </tr>
+    <tr>
+      <th>Адрес доставки</th>
+      <td><%= @completed_order.adress_delivery %></td>
+    </tr>
+    <tr>
+      <th>Метод оплаты</th>
+      <td><%= @completed_order.payment_method.title %></td>
+    </tr>
+    <% @completed_order.order.order_items.each do |item| %>
+      <tr>
+        <th>Товар: <%= item.product.title %></th>
+        <td>Кол-во: <%= item.quantity %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <th>Сумма заказа</th>
+      <td><%= @completed_order.order.total_amount %> грн</td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to "Отчет",completed_order_path(@completed_order.id,format: 'pdf'),class: "btn btn-primary",target: "_blank" %>
+<%= link_to "Удалить",completed_order_path(@completed_order.id),class: "btn btn-danger",method: :delete %>
+
+<%= render "layouts/modal_window" %>

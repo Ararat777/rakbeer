@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Цена</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.price %></td>
+      <td><%= link_to "Изменить",edit_product_path(item.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Добавить",new_product_path,class: "btn btn-primary" %>

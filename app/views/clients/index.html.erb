@@ -1,0 +1,19 @@
+<h4 class="text-center">Клиенты</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ФИО</th>
+      <th>Номер телефона</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @clients.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= link_to item.phone,client_orders_client_path(item.id),remote: true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= render "layouts/modal_window" %>
