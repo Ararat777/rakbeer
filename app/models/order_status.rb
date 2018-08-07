@@ -1,3 +1,3 @@
 class OrderStatus < ApplicationRecord
-  has_many :orders
+  has_many :completed_orders
 end

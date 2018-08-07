@@ -41,7 +41,8 @@
     </tr>
   </tbody>
 </table>
-<%= link_to "Отчет",completed_order_path(@completed_order.id,format: 'pdf'),class: "btn btn-primary",target: "_blank" %>
+<%= link_to "Сформировать чек",completed_order_path(@completed_order.id,format: 'pdf'),class: "btn btn-primary",target: "_blank" %>
+<%= link_to "Изменить",edit_completed_order_path(@completed_order.id),class: "btn btn-primary" %>
 <%= link_to "Удалить",completed_order_path(@completed_order.id),class: "btn btn-danger",method: :delete %>
 
 <%= render "layouts/modal_window" %>

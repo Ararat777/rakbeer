@@ -11,7 +11,7 @@
           <h6 class="card-subtitle mb-2"><%= item.price %> грн</h6>
           <%= form_for @order_item,remote: true do |f| %>
             <div class="input-group">
-              <%= f.number_field :quantity,min: 1,value: 1,class: "form-control mr-2" %>
+              <%= f.number_field :quantity,min: 0.1,value: 1,class: "form-control mr-2",step: :any %>
               <div class="input-group-btn">
                 <%= f.hidden_field :product_id, value: item.id %>
                 <%= f.submit "Добавить",class: "btn btn-success" %>

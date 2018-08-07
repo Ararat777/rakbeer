@@ -12,4 +12,7 @@ Rails.application.routes.draw do
       get "client_orders"
     end
   end
+  resources :order_statuses,only: [:index,:new,:create,:edit,:update]
+  resources :payment_methods,only: [:index,:new,:create,:edit,:update]
+ 
 end

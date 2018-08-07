@@ -12,7 +12,7 @@
 </div>
 <div class="form-group">
   <%= f.label "Цена" %>
-  <%= f.number_field :price,class: "form-control",min: 1 %>
+  <%= f.number_field :price,class: "form-control",min: 1,step: :any %>
 </div>
 <%= f.submit "Сохранить", class: "btn btn-success" %>
 <% end %>

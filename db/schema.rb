@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20180806124356) do
 
   create_table "order_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.float "subtotal_amount", limit: 24
-    t.integer "quantity"
+    t.float "quantity", limit: 24
     t.float "unit_price", limit: 24
     t.bigint "product_id"
     t.bigint "order_id"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20180806124356) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.float "price", limit: 24
+    t.boolean "weighting", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Количество заказов</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order_statuses.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.completed_orders.size %></td>
+      <td><%= link_to "Изменить",edit_order_status_path(item.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Добавить",new_order_status_path,class: "btn btn-primary" %>

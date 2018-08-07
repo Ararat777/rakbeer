@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Количество заказов</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @payment_methods.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.completed_orders.size %></td>
+      <td><%= link_to "Изменить",edit_payment_method_path(item.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Добавить",new_payment_method_path,class: "btn btn-primary" %>
