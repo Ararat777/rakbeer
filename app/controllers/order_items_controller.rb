@@ -12,7 +12,7 @@ class OrderItemsController < ApplicationController
     session[:order_id] = @order.id
     
     respond_to do |format|
-      format.js {}
+      format.js 
     end
   end
   
@@ -20,7 +20,7 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.find(params[:id])
     @order_item.destroy
     respond_to do |format|
-      format.js {}
+      format.js
     end
   end
   
