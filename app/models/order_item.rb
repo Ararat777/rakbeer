@@ -9,13 +9,13 @@ class OrderItem < ApplicationRecord
   end
   
   def subtotal_amount
-    quantity * unit_price
+    (quantity * unit_price).round(2)
   end
   
   private
   
   def finalize
     self[:unit_price] = unit_price
-    self[:subtotal_amount] = quantity * self[:unit_price]
+    self[:subtotal_amount] = (quantity * self[:unit_price]).round(2)
   end
 end

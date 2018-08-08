@@ -13,8 +13,8 @@ class CompletedOrder < ApplicationRecord
   validates :adress_delivery,presence: {message: "Адрес доставки обязательно"}
   
   scope :today, ->(){where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)}
-  scope :start_date_filter, -> (start_date) {where("created_at >= ?", start_date)}
-  scope :end_date_filter, -> (end_date) {where("created_at <= ?", end_date)}
+  scope :start_date_filter, -> (start_date) {where("created_at >= ?", start_date.beginning_of_day)}
+  scope :end_date_filter, -> (end_date) {where("created_at <= ?", end_date.end_of_day)}
   
   private
   

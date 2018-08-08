@@ -62,7 +62,7 @@ class CompletedOrdersController < ApplicationController
   
   def filter_query(query)
     query.each do |k,v|
-      @orders = CompletedOrder.public_send(k,v)
+      @orders = CompletedOrder.public_send(k,v.to_date)
     end
   end
 end

@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <% orders.each do |item| %>
+    <% orders.order("created_at DESC").each do |item| %>
     <tr class="status_<%= item.order_status.id %>">
       <td><%= item.id %></td>
       <td><%= item.created_at.strftime("%F %T") %></td>

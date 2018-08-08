@@ -6,7 +6,7 @@ class Order < ApplicationRecord
   before_save :update_total_amount
   
   def total_amount
-    order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
+    order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum.round(2)
   end
   
   private
