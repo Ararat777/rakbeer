@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_admin!
+  
   protect_from_forgery with: :exception
+  before_action :authenticate_admin!
   helper_method :current_order
   
   def current_order
