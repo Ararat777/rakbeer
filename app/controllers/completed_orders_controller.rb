@@ -1,5 +1,5 @@
 class CompletedOrdersController < ApplicationController
-  before_action :set_completed_order,only: [:show,:edit,:update,:destroy]
+  before_action :set_completed_order,only: [:show,:edit,:update,:destroy,:redirect_to_google_map]
   def index
     if params[:q]
       filter_query(params[:q])
@@ -48,6 +48,16 @@ class CompletedOrdersController < ApplicationController
   def destroy
     @completed_order.destroy
     redirect_to completed_orders_path
+  end
+  
+  def redirect_to_google_map
+    geocoder = Geocoder.search(@completed_order.address)
+    if geocoder.any?
+      redirect_to "https://www.google.com/maps/?q=#{geocoder.first.coordinates[0]},#{geocoder.first.coordinates[1]}"
+    else
+      flash[:notice] = "Не удается найти координаты по адресу #{@completed_order.address}"
+      render :show
+    end
   end
   
   private

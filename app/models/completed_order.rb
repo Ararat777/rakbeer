@@ -16,6 +16,10 @@ class CompletedOrder < ApplicationRecord
   scope :start_date_filter, -> (start_date) {where("created_at >= ?", start_date.beginning_of_day)}
   scope :end_date_filter, -> (end_date) {where("created_at <= ?", end_date.end_of_day)}
   
+  def address
+    "Украина Харьков #{adress_delivery}"
+  end
+  
   private
   
   def set_client_id

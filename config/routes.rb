@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :products
   resources :orders, only: [:new,:destroy]
   resources :order_items
-  resources :completed_orders
+  resources :completed_orders do
+    member do
+      get "redirect_to_google_map"
+    end
+  end
   resources :clients,only: [:index] do
     member do
       get "client_orders"

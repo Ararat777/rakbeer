@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+<p class="text-danger"><%=flash[:notice] %></p>
+<% end %>
 <h4 class="text-center">Заказ номер <%= @completed_order.id %></h4>
 <table class="table">
   <tbody>
@@ -23,7 +26,7 @@
     </tr>
     <tr>
       <th>Адрес доставки</th>
-      <td><%= @completed_order.adress_delivery %></td>
+      <td><%= link_to @completed_order.adress_delivery,redirect_to_google_map_completed_order_path(@completed_order),target: "_blank" %></td>
     </tr>
     <tr>
       <th>Метод оплаты</th>
