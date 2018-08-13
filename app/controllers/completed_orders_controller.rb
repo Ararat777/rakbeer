@@ -11,6 +11,7 @@ class CompletedOrdersController < ApplicationController
   
   def new
     @completed_order = current_order.build_completed_order
+    @completed_order.completed_at = DateTime.now + 1.hour
   end
   
   def show
