@@ -67,7 +67,7 @@ class CompletedOrdersController < ApplicationController
   end
   
   def completed_order_params
-    params.require(:completed_order).permit(:client_phone,:client_name,:adress_delivery,:payment_method_id,:order_status_id)
+    params.require(:completed_order).permit(:client_phone,:client_name,:adress_delivery,:payment_method_id,:order_status_id,:completed_at,:comment)
   end
   
   def filter_query(query)

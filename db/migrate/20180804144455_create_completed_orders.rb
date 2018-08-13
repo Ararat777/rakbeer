@@ -4,6 +4,8 @@ class CreateCompletedOrders < ActiveRecord::Migration[5.1]
       t.string :adress_delivery
       t.string :client_name
       t.string :client_phone
+      t.text :comment
+      t.datetime :completed_at
       t.belongs_to :payment_method,index: true
       t.belongs_to :order_status,index: true
       t.belongs_to :client,index: true

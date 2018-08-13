@@ -19,12 +19,20 @@
     <%= f.text_field :adress_delivery,class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label "Время выполнения заказа" %>
+    <%= f.datetime_select :completed_at,class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label "Метод оплаты" %>
     <%= f.select :payment_method_id,PaymentMethod.all.collect{|pm| [pm.title, pm.id]},class: "custom-select" %>
   </div>
   <div class="form-group">
     <%= f.label "Статус заказа" %>
     <%= f.select :order_status_id,OrderStatus.all.collect{|os| [os.title, os.id]},class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Комментарий" %>
+    <%= f.text_area :comment,class: "form-control" %>
   </div>
   <%= f.submit "Сохранить",class: "btn btn-primary" %>
 <% end %>

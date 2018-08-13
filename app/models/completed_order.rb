@@ -11,6 +11,7 @@ class CompletedOrder < ApplicationRecord
   validates :client_name,presence: {message: "ФИО обязательно"}
   validates :client_phone,presence: {message: "Телефон обязательно"},numericality: { only_integer: true,message: "В номере должны быть только цифры" },length: {is: 10,message: "Длина номера должна составлять 10 цифр"}
   validates :adress_delivery,presence: {message: "Адрес доставки обязательно"}
+  validates :completed_at,presence: {message: "Время выполнения заказа обязательно"}
   
   scope :today, ->(){where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)}
   scope :start_date_filter, -> (start_date) {where("created_at >= ?", start_date.beginning_of_day)}

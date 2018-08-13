@@ -9,8 +9,12 @@
       <td><%= @completed_order.id %></td>
     </tr>
     <tr>
-      <th>Дата и время</th>
+      <th>Время принятия заказа</th>
       <td><%= @completed_order.created_at.strftime("%F %T") %></td>
+    </tr>
+    <tr>
+      <th>Время выполнения заказа</th>
+      <td><%= @completed_order.completed_at.strftime("%F %T") %></td>
     </tr>
     <tr>
       <th>Статус</th>
@@ -41,6 +45,10 @@
     <tr>
       <th>Сумма заказа</th>
       <td><%= @completed_order.order.total_amount %> грн</td>
+    </tr>
+    <tr>
+      <th>Комментарий</th>
+      <td><%= @completed_order.comment %></td>
     </tr>
   </tbody>
 </table>

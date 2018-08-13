@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20180806124356) do
     t.string "adress_delivery"
     t.string "client_name"
     t.string "client_phone"
+    t.text "comment"
+    t.datetime "completed_at"
     t.bigint "payment_method_id"
     t.bigint "order_status_id"
     t.bigint "client_id"
