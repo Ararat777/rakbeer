@@ -1,10 +1,10 @@
-<table class="table">
+<table class="table table-sm">
   <thead>
     <tr>
-      <th>Номер</th>
-      <th>Дата и время</th>
-      <th>Статус заказа</th>
-      <th>Сумма заказа</th>
+      <th>#</th>
+      <th>Дата</th>
+      <th>Статус</th>
+      <th>Сумма</th>
       <th>Действия</th>
     </tr>
   </thead>
@@ -12,7 +12,7 @@
     <% orders.order("created_at DESC").each do |item| %>
     <tr class="status_<%= item.order_status.id %>">
       <td><%= item.id %></td>
-      <td><%= item.created_at.strftime("%F %T") %></td>
+      <td><%= item.created_at.strftime("%-d.%m.%y %T") %></td>
       <td><%= item.order_status.title %></td>
       <td><%= item.order.total_amount %> грн</td>
       <td><%= link_to "Просмотреть",completed_order_path(item.id) %> | <%= link_to "Изменить",edit_completed_order_path(item.id) %> </td>

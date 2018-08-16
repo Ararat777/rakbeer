@@ -10,11 +10,11 @@
     </tr>
     <tr>
       <th>Время принятия заказа</th>
-      <td><%= @completed_order.created_at.strftime("%F %T") %></td>
+      <td><%= @completed_order.created_at.strftime("%-d.%m.%y %T") %></td>
     </tr>
     <tr>
       <th>Время выполнения заказа</th>
-      <td><%= @completed_order.completed_at.strftime("%F %T") %></td>
+      <td><%= @completed_order.completed_at.strftime("%-d.%m.%y %T") %></td>
     </tr>
     <tr>
       <th>Статус</th>

@@ -6,8 +6,8 @@ module Reportable
       font "#{Rails.root}/app/assets/fonts/TimesNewRomanRegular.ttf"
       data = [
         ["Номер", order.id],
-        ["Время принятия заказа", order.created_at.strftime("%F %T")],
-        ["Время выполнения заказа", order.completed_at.strftime("%F %T")],
+        ["Время принятия заказа", order.created_at.strftime("%-d.%m.%y %T")],
+        ["Время выполнения заказа", order.completed_at.strftime("%-d.%m.%y %T")],
         ["Статус",order.order_status.title],
         ["ФИО клиента",order.client_name],
         ["Номер клиента",order.client_phone],

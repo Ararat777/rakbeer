@@ -50,3 +50,19 @@ body{
 .status_5,.status_6{
   background: rgba(255,0,0,0.5);
 }
+
+@media (max-width: 415px){
+  html{
+    font-size: 14px;
+  }
+  .btn-success{
+    font-size: 14px;
+  }
+  
+  #modal-box{
+    width: 100%;
+    margin: 0;
+    
+  }
+}
+
