@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery3
 //= require jquery_ujs 
+//= require jquery.datetimepicker.full.min
 //= require popper
 //= require bootstrap
 //= require_tree .
