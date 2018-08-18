@@ -11,7 +11,7 @@ class CompletedOrdersController < ApplicationController
   
   def new
     @completed_order = current_order.build_completed_order
-    @completed_order.completed_at = DateTime.now + 1.hour
+    @completed_order.completed_at = (DateTime.now + 1.hour).strftime("%-d.%m.%y %T")
   end
   
   def show
@@ -68,7 +68,7 @@ class CompletedOrdersController < ApplicationController
   end
   
   def completed_order_params
-    params.require(:completed_order).permit(:client_phone,:client_name,:adress_delivery,:payment_method_id,:order_status_id,:completed_at,:comment)
+    params.require(:completed_order).permit(:client_phone,:client_name,:adress_delivery,:payment_method_id,:order_status_id,:completed_at,:comment,:salinity_id)
   end
   
   def filter_query(query)

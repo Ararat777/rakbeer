@@ -1,0 +1,7 @@
+<%= form_for salinity do |f| %>
+<div class="form-group">
+  <%= f.label "Название" %>
+  <%= f.text_field :title,class: "form-control" %>
+</div>
+<%= f.submit "Сохранить", class: "btn btn-primary" %>
+<% end %>

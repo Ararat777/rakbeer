@@ -4,7 +4,7 @@ class CompletedOrder < ApplicationRecord
   belongs_to :client
   belongs_to :payment_method
   belongs_to :order_status
-  
+  belongs_to :salinity
   before_save :set_client_id
   after_create :make_report_pdf
   

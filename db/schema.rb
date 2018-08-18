@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180806124356) do
+ActiveRecord::Schema.define(version: 20180818173929) do
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -47,12 +47,14 @@ ActiveRecord::Schema.define(version: 20180806124356) do
     t.bigint "order_status_id"
     t.bigint "client_id"
     t.bigint "order_id"
+    t.bigint "salinity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_completed_orders_on_client_id"
     t.index ["order_id"], name: "index_completed_orders_on_order_id"
     t.index ["order_status_id"], name: "index_completed_orders_on_order_status_id"
     t.index ["payment_method_id"], name: "index_completed_orders_on_payment_method_id"
+    t.index ["salinity_id"], name: "index_completed_orders_on_salinity_id"
   end
 
   create_table "order_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -89,6 +91,12 @@ ActiveRecord::Schema.define(version: 20180806124356) do
     t.string "title"
     t.float "price", limit: 24
     t.boolean "weighting", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "salinities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

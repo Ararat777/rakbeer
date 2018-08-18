@@ -1,0 +1,2 @@
+module SalinityHelper
+end

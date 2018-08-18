@@ -10,6 +10,7 @@ class CreateCompletedOrders < ActiveRecord::Migration[5.1]
       t.belongs_to :order_status,index: true
       t.belongs_to :client,index: true
       t.belongs_to :order,index: true
+      t.belongs_to :salinity,index: true
       t.timestamps
     end
   end

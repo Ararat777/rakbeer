@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Количество заказов</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @salinities.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.completed_orders.size %></td>
+      <td><%= link_to "Изменить",edit_salinity_path(item.id) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Добавить",new_salinity_path,class: "btn btn-primary" %>

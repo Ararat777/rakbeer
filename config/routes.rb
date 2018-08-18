@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   end
   resources :order_statuses,only: [:index,:new,:create,:edit,:update]
   resources :payment_methods,only: [:index,:new,:create,:edit,:update]
+  resources :salinities,only: [:index,:new,:create,:edit,:update]
  
 end
