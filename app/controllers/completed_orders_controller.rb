@@ -11,7 +11,7 @@ class CompletedOrdersController < ApplicationController
   
   def new
     @completed_order = current_order.build_completed_order
-    @completed_order.completed_at = (DateTime.now + 1.hour).strftime("%-d.%m.%y %T")
+    @completed_order.completed_at = (DateTime.now + 1.hour).strftime("%Y/%m/%d %R")
   end
   
   def show
