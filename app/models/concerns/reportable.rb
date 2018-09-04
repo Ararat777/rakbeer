@@ -24,11 +24,11 @@ module Reportable
       
       image "#{Rails.root}/app/assets/images/logo.png", :position => :center
       move_down(10)
-      text "Отчет по заказу номер #{order.id}",align: :center,size: 20
+      text "Отчет по заказу номер #{order.id}",align: :center,size: 14
       move_down(20)
-      table(data,:position => :center,:cell_style => {size: 22,borders: []})
+      table(data,:position => :center,:cell_style => {size: 14,borders: []})
       move_down(20)
-      text "Спасибо за Ваш заказ!",align: :center,size: 20
+      text "Спасибо за Ваш заказ!",align: :center,size: 14
       render_file("#{Rails.root}/app/reports/Отчет_по_заказу_#{order.id}.pdf")
     end
   end
